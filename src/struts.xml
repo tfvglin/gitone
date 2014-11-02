@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="students" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="login">/index.jsp</result>
+		</global-results>
+		<action name="begin" class="edu.xidian.research.action.StudentsAction" method="login">
+			<result name="success">/bgo.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+	</package>
+	<package name="admin" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="login">/index.jsp</result>
+		</global-results>
+		<action name="login" class="edu.xidian.research.action.AdminAction" method="login">
+			<result name="success">/adminsuccess.jsp</result>
+			<result name="input">/admin.jsp</result>
+		</action>
+		<action name="createxcel" class="edu.xidian.research.action.AdminAction" method="creatExcel">
+			<result name="success">/adminsuccess.jsp</result>
+			<result name="input">/admin.jsp</result>
+		</action>
+	</package>
+	<package name="question" namespace="/" extends="struts-default">
+	
+		<action name="add" class="edu.xidian.research.action.QuestionAction" method="addanswer">
+			<result name="success">/success.jsp</result>
+			<result name="input">/bgo.jsp</result>
+		</action>
+	</package>
+
+</struts>    

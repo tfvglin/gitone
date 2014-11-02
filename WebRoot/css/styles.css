@@ -1,0 +1,16 @@
+	.q,.s,.a
+{
+	text-align:left
+}
+
+.a
+{
+	margin:10px;
+}
+
+.graytips
+{
+	border-width:0 0 1 0;
+	border-style:solid;
+	border-color:#00e000;
+}

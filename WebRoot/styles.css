@@ -1,0 +1,25 @@
+.question
+{
+	text-align:left;
+	
+}
+
+.select,.other
+{
+	margin:10px;
+}
+
+.area
+{
+	height: 50px;
+}
+
+.graytips
+{
+
+	position: static;
+	border-width:0 0 1 0;
+	border-style:solid;
+	border-color:#436EEE;
+	margin-left: 5px;
+}
