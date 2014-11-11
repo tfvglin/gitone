@@ -25,6 +25,10 @@ public class QuestionAction extends SuperAction{
 	public String addanswer()
 	{
 		
+		//String test = (String) request.getSession().getAttribute("stuname");
+		
+		//System.out.println(test);
+		
 		QuestionDAO q_dao = new QuestionDAO();
 		Students stu = new Students();
 		List<String> sel_anslist = new ArrayList<String>();

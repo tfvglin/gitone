@@ -76,7 +76,7 @@
 					}
 					
 					
-					var val=$('input:radio:unchecked').val();
+					var val=$('input:radio[name="question1"]:checked').val();
 					if(val==null){
 						alert("请选择第1题");
 						return false;

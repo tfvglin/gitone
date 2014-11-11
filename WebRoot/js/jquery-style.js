@@ -1,5 +1,5 @@
 ﻿
-	$(function(){  
+	$(document).ready(function(){ 
 		
 		$("input[class*=graytips]") //所有样式名中含有grayTips的input   
 		.each(function(){   
@@ -32,12 +32,5 @@
 					
 				});	
 		
-		$(input[type="submit"]).mouseenter(function(){
-			$(this).css({"background-color":"#fff"});
-		});
-		
-		$(":button").mouseenter(function(){
-			alert("aa");
-			$(this).css({"color":"red"});
-		});
+	
 	});

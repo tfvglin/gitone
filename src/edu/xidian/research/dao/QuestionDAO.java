@@ -121,4 +121,34 @@ public class QuestionDAO {
 		}
 	}
 	
+	public int getAnswerCount()
+	{
+		Statement stmt = null;
+		ResultSet result=null;
+		try
+		{
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+			
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","0510");
+			
+			stmt = conn.createStatement();
+			String sql = "select count(*) record from answer";
+			result  = stmt.executeQuery(sql);
+			if(result.next())
+			{
+			return result.getInt("record");
+			}
+			else
+			{
+				return 0;
+			}
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+			return 0;
+			
+		}
+	}
+	
 	}

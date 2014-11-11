@@ -27,11 +27,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
 	<script src="js/jquery-question.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery-style.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-	</script>
 	
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
 	
-	<style type="text/css">
+<!--  	<style type="text/css">
 	.area
 	{
 	padding:15px;
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		margin:0 auto;
 	}
 
-	</style>
+	</style>-->
   </head>
   
   <body>
@@ -89,7 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	<div id="erro"><p>错误提示<p></div>
  	<button id="ok">确定</button>
  </div>
-  <s:form name="reform" action="success.jsp" method="post" theme="simple">
+  <s:form name="reform" action="add.action" method="post" theme="simple">
  	<s:actionmessage cssStyle="color:red"/><s:fielderror cssStyle="color:red" />
  	  <s:hidden name="stuname" value="%{#parameters.stuname}"/>
  	  <s:hidden name="stunum" value="%{#parameters.stunum}"/> 

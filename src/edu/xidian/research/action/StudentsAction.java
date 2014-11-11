@@ -22,6 +22,8 @@ public class StudentsAction extends SuperAction implements ModelDriven<Students>
 		{
 			if(stu_dao.stucheck(stu))
 			{
+				request.getSession().setAttribute("stuname", stu.getStuname());
+				request.getSession().setAttribute("stunum", stu.getStunum());
 				return SUCCESS;
 			}
 			else
