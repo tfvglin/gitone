@@ -49,8 +49,14 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 			return false;
 		}
 	}
+
+	@Override
+	public Admin getModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	public String creatExcel()
+/*	public String creatExcel()
 	{
 		
 		ResultSet rs = qDao.getAnswer();
@@ -145,13 +151,8 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 			e.printStackTrace();
 			return INPUT;
 		}
-	}
+	}*/
 
 
-	@Override
-	public Admin getModel() {
-		// TODO Auto-generated method stub
-		return admin;
-	}
 
 }
