@@ -33,7 +33,7 @@ public class QuestionDAO {
 		{
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","0510");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","zsb@2014");
 			
 			stmt = conn.prepareStatement("insert into answer (ID,stuname,stunum,phone,time,q1,q2,q3,q4_1,q4_2,q4_3,q4_4,q4_5,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,q21,q22,q23,q24,q25,q1other,q2other,q3other,q4_1other,q4_2other,q4_3other,q4_4other,q4_5other,q5other,q6other,q7other,q8other,q9other,q10other,q11other,q12other,q13other,q14other,q17other,q18other,q19other,q20other,q21other) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			//String sql="insert into answer ('ID','stuname','stunum') values (1,'ажи╜','123')";
@@ -77,7 +77,7 @@ public class QuestionDAO {
 		{
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","0510");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","zsb@2014");
 			
 			stmt = conn.createStatement();
 			//String sql="insert into answer ('ID','stuname','stunum') values (1,'ажи╜','123')";
@@ -106,7 +106,7 @@ public class QuestionDAO {
 		{
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","0510");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/question?useUnicode=true&characterEncoding=UTF-8","root","zsb@2014");
 			
 			stmt = conn.createStatement();
 			

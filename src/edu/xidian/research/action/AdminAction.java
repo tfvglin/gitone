@@ -44,34 +44,65 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 			return false;
 		}
 	}
+
+	@Override
+	public Admin getModel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
-	public String creatExcel()
+/*	public String creatExcel()
 	{
-		QuestionDAO qDao = new QuestionDAO();
+		
 		ResultSet rs = qDao.getAnswer();
 		
 		 try {
-			//InputStream instream = new FileInputStream("D:/answer.xls");
-			System.out.println(System.getProperty("user.dir"));
-			WritableWorkbook wb = Workbook.createWorkbook(new File("C:/Program Files/Apache Software Foundation/apache-tomcat-7.0.56/webapps/Question_Paper/data/answer.xls"));
+			 ResultSetMetaData rsmd = (ResultSetMetaData) rs.getMetaData();
+			 WritableWorkbook wb = Workbook.createWorkbook(new File("D:/wwwroot/Question_Paper/data/answer.xls"));
+			 WritableSheet st = wb.createSheet("调查结果", 0);
+			 int count=rsmd.getColumnCount();
+			 Label[] label_title=new Label[count];
+			
+			  for(int i=0;i<count;i++)
+			 {
+				 label_title[i] = new Label(i,0,rsmd.getColumnName(i+1));
+				 st.addCell(label_title[i]);
+			 }
+			 	 int l =1;
+			 	 while(rs.next())
+			 {
+				 for(int i=0;i<count;i++)
+				 {
+					 st.addCell(new Label(i,l,rs.getString(i+1)));
+			 
+				 }
+				 l++;
+			 }
+			 
+			 
+			 //InputStream instream = new FileInputStream("D:/answer.xls");
+			 	/*	System.out.println(System.getProperty("user.dir"));
+			WritableWorkbook wb = Workbook.createWorkbook(new File("D:/wwwroot/Question_Paper/data/answer.xls"));
 			WritableSheet st = wb.createSheet("调查结果", 0);
 			Label title_stuname = new Label(0, 0, "姓名");
 			Label title_stunum = new Label(1, 0, "学号");
 			Label title_phone = new Label(2, 0, "电话");
-			Label title_q1 = new Label(3, 0, "q1");
-			Label title_q1other = new Label(4, 0, "q1other");
-			Label title_q2 = new Label(5, 0, "q2");
-			Label title_q2other = new Label(6, 0, "q2other");
-			Label title_q3 = new Label(7, 0, "q3");
-			Label title_q3other = new Label(8, 0, "q3other");
-			Label title_q4_1 = new Label(9, 0, "q4_1");
-			Label title_q4_1other = new Label(10, 0, "q4_1other");
-			Label title_q4_2 = new Label(11, 0, "q4_2");
-			Label title_q4_2other = new Label(12, 0, "q4_2other");
-			Label title_q4_3 = new Label(13, 0, "q4_3");
-			Label title_q4_3other = new Label(14, 0, "q4_3other");
+			Label title_time = new Label(3,0,"提交时间");
+			Label title_q1 = new Label(4, 0, "q1");
+			Label title_q1other = new Label(5, 0, "q1other");
+			Label title_q2 = new Label(6, 0, "q2");
+			Label title_q2other = new Label(7, 0, "q2other");
+			Label title_q3 = new Label(8, 0, "q3");
+			Label title_q3other = new Label(9, 0, "q3other");
+			Label title_q4_1 = new Label(10, 0, "q4_1");
+			Label title_q4_1other = new Label(11, 0, "q4_1other");
+			Label title_q4_2 = new Label(12, 0, "q4_2");
+			Label title_q4_2other = new Label(13, 0, "q4_2other");
+			Label title_q4_3 = new Label(14, 0, "q4_3");
+			Label title_q4_3other = new Label(15, 0, "q4_3other");
 		//	Label title1 = new Label(15, 0, "姓名");
 			st.addCell(title_stuname);
+			st.addCell(title_time);
 			st.addCell(title_q4_3other);
 			st.addCell(title_q4_3);
 			st.addCell(title_q4_2other);
@@ -92,18 +123,19 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 				st.addCell(new Label(0,i,rs.getString("stuname")));
 				st.addCell(new Label(1,i,rs.getString("stunum")));
 				st.addCell(new Label(2,i,rs.getString("phone")));
-				st.addCell(new Label(3,i,rs.getString("q1")));
-				st.addCell(new Label(4,i,rs.getString("q1other")));
-				st.addCell(new Label(5,i,rs.getString("q2")));
-				st.addCell(new Label(6,i,rs.getString("q2other")));
-				st.addCell(new Label(7,i,rs.getString("q3")));
-				st.addCell(new Label(8,i,rs.getString("q3other")));
-				st.addCell(new Label(9,i,rs.getString("q4_1")));
-				st.addCell(new Label(10,i,rs.getString("q4_1other")));
-				st.addCell(new Label(11,i,rs.getString("q4_2")));
-				st.addCell(new Label(12,i,rs.getString("q4_2other")));
-				st.addCell(new Label(13,i,rs.getString("q4_3")));
-				st.addCell(new Label(14,i,rs.getString("q4_3other")));
+				st.addCell(new Label(3,i,rs.getString("time")));
+				st.addCell(new Label(4,i,rs.getString("q1")));
+				st.addCell(new Label(5,i,rs.getString("q1other")));
+				st.addCell(new Label(6,i,rs.getString("q2")));
+				st.addCell(new Label(7,i,rs.getString("q2other")));
+				st.addCell(new Label(8,i,rs.getString("q3")));
+				st.addCell(new Label(9,i,rs.getString("q3other")));
+				st.addCell(new Label(10,i,rs.getString("q4_1")));
+				st.addCell(new Label(11,i,rs.getString("q4_1other")));
+				st.addCell(new Label(12,i,rs.getString("q4_2")));
+				st.addCell(new Label(13,i,rs.getString("q4_2other")));
+				st.addCell(new Label(14,i,rs.getString("q4_3")));
+				st.addCell(new Label(15,i,rs.getString("q4_3other")));
 				i++;
 			}
 			wb.write();
@@ -114,13 +146,8 @@ public class AdminAction extends SuperAction implements ModelDriven<Admin>{
 			e.printStackTrace();
 			return INPUT;
 		}
-	}
+	}*/
 
 
-	@Override
-	public Admin getModel() {
-		// TODO Auto-generated method stub
-		return admin;
-	}
 
 }
